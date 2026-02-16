@@ -9,7 +9,5 @@
             Console.WriteLine("\nнажмите любую клавишу");
             Console.ReadKey();
         }
-
-
     }
 }
