@@ -2,12 +2,19 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("скоро здесь будет змейка ");
-            Console.WriteLine("\nнажмите любую клавишу");
-            Console.ReadKey();
+            int playerX = 5;
+            int playerY = 10;
+            bool flag = true;
+            while (flag)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(playerX++, playerY++);
+                Console.WriteLine("@");
+                Thread.Sleep(100);
+            }
         }
     }
 }
