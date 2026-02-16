@@ -12,6 +12,7 @@ while (flag)
         if (key == ConsoleKey.Escape) //если клавиша esc нажата
         {
             flag = false;
+            Console.Beep(500, 200); // 500-частота гц, 200-длительность
             continue;
         }
     }
