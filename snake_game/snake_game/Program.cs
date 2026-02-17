@@ -15,6 +15,12 @@ while (flag)
             Console.Beep(500, 200); // 500-частота гц, 200-длительность
             continue;
         }
+
+        ConsoleKey key1 = Console.ReadKey(true).Key;
+        if (key == ConsoleKey.P)
+        {
+            Console.SetCursorPosition(playerX--, playerY--);
+        }
     }
     Console.Clear();
     Console.SetCursorPosition(playerX++, playerY++);
