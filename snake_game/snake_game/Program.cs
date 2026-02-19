@@ -7,6 +7,8 @@ int playerY = 10;
 bool flag = true;
 int probel = 58;
 int probel1 = 3;
+int p = 58;
+int p1 = 3;
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine();
 Console.WriteLine();
@@ -49,9 +51,11 @@ if (key2 == ConsoleKey.Enter)
                 if (key == ConsoleKey.P)
 
                 {
-                    Console.SetCursorPosition(playerX--, playerY--);
-
-                }
+                Console.ForegroundColor = ConsoleColor.Green;                    
+                Console.WriteLine("вы поставили игру на паузу. для продолжения повторно нажмите P");
+                Console.SetCursorPosition(playerX--, playerY--);
+                Console.ResetColor();
+            }
 
             }
             Console.Clear();
