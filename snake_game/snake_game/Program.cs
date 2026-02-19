@@ -5,6 +5,8 @@ using System.Transactions;
 int playerX = 5;
 int playerY = 10;
 bool flag = true;
+int probel = 58;
+int probel1 = 3;
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine();
 Console.WriteLine();
@@ -23,8 +25,10 @@ if (key2 == ConsoleKey.Enter)
         if (Console.KeyAvailable)  //если что то нажато
         {
             ConsoleKey key3 = Console.ReadKey(true).Key;
-            if (key3 == ConsoleKey.Backspace)
+            if (key3 == ConsoleKey.Spacebar)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.SetCursorPosition(probel,probel1 );
                 Console.WriteLine("ЗАЧЕМ?"); 
             }
                 ConsoleKey key = Console.ReadKey(true).Key;
