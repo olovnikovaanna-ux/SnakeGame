@@ -6,6 +6,7 @@ using static System.Net.Mime.MediaTypeNames;
 internal class Program
 {
 
+
     
     private static void Main(string[] args)
     {
@@ -36,8 +37,8 @@ internal class Program
                         Console.Beep(500, 200); // 500-частота гц, 200-длительность
                         Console.Clear();
 
-                        SetCursorPosition(playerX: 58, playerY: 3);
-                        WriteColor("\n\n==== GAME OVER ====", ConsoleColor.Red);
+                         SetCursorPosition(playerX: 58, playerY: 3);
+                        WriteColor("\n\n==== GAME OVER ====", ConsoleColor.Red);                        
                         continue;
                     }
 
@@ -66,9 +67,9 @@ internal class Program
 
                     {
 
-                        SetCursorPosition(playerX: 58, playerY: 3);
+                        SetCursorPosition(playerX: 25, playerY: 3);
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("     вы поставили игру на паузу. для продолжения повторно нажмите P");
+                        Console.WriteLine("вы поставили игру на паузу. для продолжения повторно нажмите P");
                         Console.ResetColor();
                         Console.ReadKey();
                         while (key != ConsoleKey.P)
