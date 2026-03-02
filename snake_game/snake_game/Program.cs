@@ -10,7 +10,6 @@ int probel = 58;
 int probel1 = 3;
 int p = 58;
 int p1 = 3;
-int consoleWindow;
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine();
 Console.WriteLine();
@@ -56,12 +55,7 @@ if (key2 == ConsoleKey.Enter)
                 playerX++;
 
 
-            if (playerX < 0) playerX = 117;
-            if (playerX > 117) playerX = 0;
-            
-            if (playerY < 0) playerY = 29;
-            if (playerY > 29) playerY = 0;
-
+           
             if (key == ConsoleKey.Spacebar)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
