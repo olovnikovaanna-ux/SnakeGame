@@ -1,92 +1,114 @@
-﻿
-
+﻿using System.Drawing;
 using System.Transactions;
+using static System.Net.Mime.MediaTypeNames;
 
-int playerX = 5;
-int playerY = 10;
-ConsoleKey currentKey = ConsoleKey.NoName;
-bool flag = true;
-int probel = 58;
-int probel1 = 3;
-int p = 58;
-int p1 = 3;
-Console.ForegroundColor = ConsoleColor.Green;
-Console.WriteLine();
-Console.WriteLine();
-Console.Write("                                            НАЖМИТЕ");
-Console.ResetColor();
-Console.Write(" ENTER ");
-Console.ForegroundColor = ConsoleColor.Green;
-Console.Write("ЧТОБЫ НАЧАТЬ ИГРУ");
-Console.ResetColor();
-ConsoleKey key2 = Console.ReadKey(true).Key;
 
-if (key2 == ConsoleKey.Enter)
+internal class Program
 {
-    Console.Beep(400, 300);
 
 
-    while (flag)
+    
+    private static void Main(string[] args)
     {
-        if (Console.KeyAvailable)  //если что то нажато
+        int _playerX = 5;
+        int _playerY = 10;
+        bool flag = true;
+        
+        SetCursorPosition(playerX: 58, playerY: 3);
+        WriteColor("\n\nЧТОБЫ НАЧАТЬ ИГРУ, НАЖМИТЕ", ConsoleColor.Green);  
+        WriteColor(" ENTER ");
+
+
+        ConsoleKey key2 = Console.ReadKey(true).Key; // TO DO:
+
+        if (key2 == ConsoleKey.Enter)
         {
-            ConsoleKey key = Console.ReadKey(true).Key;
-            if (key == ConsoleKey.Escape)
+            Console.Beep(400, 300);
+
+
+            while (flag)
             {
-                flag = false;
-                Console.Beep(500, 200); // 500-частота гц, 200-длительность
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("                                                ==== GAME OVER ====   ");
-                Console.ResetColor();
-                continue;
-            }
-
-
-            if (key == ConsoleKey.W || key == ConsoleKey.UpArrow)
-                playerY--;
-            if (key == ConsoleKey.S || key == ConsoleKey.DownArrow)
-                playerY++;
-            if (key == ConsoleKey.A || key == ConsoleKey.LeftArrow)
-                playerX--;
-            if (key == ConsoleKey.D || key == ConsoleKey.RightArrow)
-                playerX++;
-
-
-           
-            if (key == ConsoleKey.Spacebar)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.SetCursorPosition(probel,probel1 );
-                Console.WriteLine("ЗАЧЕМ?"); 
-            }
-               
-
-               
-            if (key == ConsoleKey.P)
-
-            {
-                
-                Console.SetCursorPosition(p, p1);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("          вы поставили игру на паузу. для продолжения повторно нажмите P");
-                Console.ResetColor();
-                Console.ReadKey();
-                while (key != ConsoleKey.P) 
+                if (Console.KeyAvailable)  //если что то нажато
                 {
-                    key = Console.ReadKey(true).Key;
+                    ConsoleKey key = Console.ReadKey(true).Key;
+                    if (key == ConsoleKey.Escape)
+                    {
+                        flag = false;
+                        Console.Beep(500, 200); // 500-частота гц, 200-длительность
+                        Console.Clear();
+
+                         SetCursorPosition(playerX: 58, playerY: 3);
+                        WriteColor("\n\n==== GAME OVER ====", ConsoleColor.Red);                        
+                        continue;
+                    }
+
+
+                    if (key == ConsoleKey.W || key == ConsoleKey.UpArrow)
+                        _playerY--;
+                    if (key == ConsoleKey.S || key == ConsoleKey.DownArrow)
+                        _playerY++;
+                    if (key == ConsoleKey.A || key == ConsoleKey.LeftArrow)
+                        _playerX--;
+                    if (key == ConsoleKey.D || key == ConsoleKey.RightArrow)
+                        _playerX++;
+
+
+
+                    if (key == ConsoleKey.Spacebar)
+                    {
+                        SetCursorPosition(playerX: 58, playerY: 3);
+
+                        WriteColor("ПАУЗА", ConsoleColor.Yellow);
+                    }
+
+
+
+                    if (key == ConsoleKey.P)
+
+                    {
+
+                        SetCursorPosition(playerX: 25, playerY: 3);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("вы поставили игру на паузу. для продолжения повторно нажмите P");
+                        Console.ResetColor();
+                        Console.ReadKey();
+                        while (key != ConsoleKey.P)
+                        {
+                            key = Console.ReadKey(true).Key;
+                        }
+                    }
+
+
+
                 }
+                Console.Clear();
+                SetCursorPosition(_playerX, _playerY);
+                Console.Beep(2000, 150);
+                Console.WriteLine("@");
+                Thread.Sleep(50);
+
             }
-
-
 
         }
-            Console.Clear();
-            Console.SetCursorPosition(playerX, playerY);
-            Console.Beep(2000, 150);
-            Console.WriteLine("@");
-            Thread.Sleep(50);
-      }
- }
+
+
+
+    }
+
+
+
+
+
+    private static void WriteColor(string text, ConsoleColor color = ConsoleColor.White)
+    {
+        Console.ForegroundColor = color;
+        Console.Write(text);
+        Console.ResetColor();
+    }
+
+
+    private static void SetCursorPosition(int playerX = 5, int playerY = 10)
+    {
+        Console.SetCursorPosition(playerX, playerY);
+    }
+}
