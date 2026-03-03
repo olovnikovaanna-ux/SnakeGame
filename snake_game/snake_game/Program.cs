@@ -6,16 +6,63 @@ using static System.Net.Mime.MediaTypeNames;
 internal class Program
 {
 
+   
 
+    private static char BORDER_CHAR = '#';          
+    private static int OFFSET = 5;                  
+    private static int fps = 100;           
+    private static int fieldWidth;          
+    private static int fieldHeight;
+
+    //public static void DrawBorders(int width, int height, int offset, char borderChar = '*')
+    //{
+
+    //    int upperBorder = offset;           // верхняя граница поля
+    //    int lowerBorder = offset + height;  // нижняя граница поля
+    //    int leftBorder = offset;            // левая граница поля
+    //    int rightBorder = offset + width;   // правая граница поля
+
+    //    Console.Clear();
+
+    //    for (int x = leftBorder; x < rightBorder; x++)
+    //    {
+    //        Console.SetCursorPosition(x, upperBorder);
+    //        Console.Write(borderChar);
+    //    }
+
+    //    for (int x = leftBorder; x < rightBorder; x++)
+    //    {
+    //        Console.SetCursorPosition(x, lowerBorder);
+    //        Console.Write(borderChar);
+    //    }
+
+    //    for (int y = upperBorder; y < lowerBorder; y++)
+    //    {
+    //        Console.SetCursorPosition(leftBorder, y);
+    //        Console.Write(borderChar);
+    //    }
+
+    //    for (int y = upperBorder; y < lowerBorder; y++)
+    //    {
+    //        Console.SetCursorPosition(rightBorder, y);
+    //        Console.Write(borderChar);
+    //    }
+
+    //}
+
+     
     
+
     private static void Main(string[] args)
     {
         int _playerX = 5;
         int _playerY = 10;
         bool flag = true;
-        
-        SetCursorPosition(playerX: 58, playerY: 3);
-        WriteColor("\n\nЧТОБЫ НАЧАТЬ ИГРУ, НАЖМИТЕ", ConsoleColor.Green);  
+       
+
+
+        SetCursorPosition(playerX: 43, playerY: 3);
+        WriteColor("ЧТОБЫ НАЧАТЬ ИГРУ, НАЖМИТЕ", ConsoleColor.Green);  
         WriteColor(" ENTER ");
 
 
@@ -26,8 +73,65 @@ internal class Program
             Console.Beep(400, 300);
 
 
+
             while (flag)
             {
+
+                char BORDER_CHAR = '#';
+                int OFFSET = 5;
+                int fps = 100;
+                int fieldWidth;
+                int fieldHeight;
+
+                Console.CursorVisible = false;                
+                Console.WindowWidth = 60;                   
+                Console.WindowHeight = 30;                  
+                fieldWidth = Console.WindowWidth;          
+                fieldHeight = Console.WindowHeight;
+
+
+                
+
+
+                int width = 77;
+                int height = 100;
+                int offset = 3;
+                char borderChar = '*';
+    
+
+        int upperBorder = offset;           // верхняя граница поля
+        int lowerBorder = offset + height;  // нижняя граница поля
+        int leftBorder = offset;            // левая граница поля
+        int rightBorder = offset + width;   // правая граница поля
+
+        Console.Clear();
+
+        for (int x = leftBorder; x < rightBorder; x++)
+        {
+            Console.SetCursorPosition(x, upperBorder);
+            Console.Write(borderChar);
+        }
+
+        for (int x = leftBorder; x < rightBorder; x++)
+        {
+            Console.SetCursorPosition(x, lowerBorder);
+            Console.Write(borderChar);
+        }
+
+        for (int y = upperBorder; y < lowerBorder; y++)
+        {
+            Console.SetCursorPosition(leftBorder, y);
+            Console.Write(borderChar);
+        }
+
+        for (int y = upperBorder; y < lowerBorder; y++)
+        {
+            Console.SetCursorPosition(rightBorder, y);
+            Console.Write(borderChar);
+        }
+
+    
+
                 if (Console.KeyAvailable)  //если что то нажато
                 {
                     ConsoleKey key = Console.ReadKey(true).Key;
@@ -37,8 +141,8 @@ internal class Program
                         Console.Beep(500, 200); // 500-частота гц, 200-длительность
                         Console.Clear();
 
-                         SetCursorPosition(playerX: 58, playerY: 3);
-                        WriteColor("\n\n==== GAME OVER ====", ConsoleColor.Red);                        
+                         SetCursorPosition(playerX: 50, playerY: 3);
+                        WriteColor("==== GAME OVER ====", ConsoleColor.Red);                        
                         continue;
                     }
 
@@ -81,6 +185,18 @@ internal class Program
 
 
                 }
+
+                void DraveSnake()
+                {
+
+
+                    Console.Clear();
+                    SetCursorPosition(_playerX, _playerY);
+                    Console.Beep(2000, 150);
+                    Console.WriteLine("@");
+                    Thread.Sleep(50);
+                }
+
                 Console.Clear();
                 SetCursorPosition(_playerX, _playerY);
                 Console.Beep(2000, 150);
@@ -96,7 +212,17 @@ internal class Program
     }
 
 
+    // void DraveSnake()
+    //{
+    //    int _playerX = 5;
+    //    int _playerY = 10;
 
+    //    Console.Clear();
+    //    SetCursorPosition(_playerX, _playerY);
+    //    Console.Beep(2000, 150);
+    //    Console.WriteLine("@");
+    //    Thread.Sleep(50);
+    //}
 
 
     private static void WriteColor(string text, ConsoleColor color = ConsoleColor.White)
