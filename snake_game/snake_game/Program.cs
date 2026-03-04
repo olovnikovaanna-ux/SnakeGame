@@ -8,48 +8,7 @@ internal class Program
 
    
 
-    private static char BORDER_CHAR = '#';          
-    private static int OFFSET = 5;                  
-    private static int fps = 100;           
-    private static int fieldWidth;          
-    private static int fieldHeight;
-
-    //public static void DrawBorders(int width, int height, int offset, char borderChar = '*')
-    //{
-
-    //    int upperBorder = offset;           // верхняя граница поля
-    //    int lowerBorder = offset + height;  // нижняя граница поля
-    //    int leftBorder = offset;            // левая граница поля
-    //    int rightBorder = offset + width;   // правая граница поля
-
-    //    Console.Clear();
-
-    //    for (int x = leftBorder; x < rightBorder; x++)
-    //    {
-    //        Console.SetCursorPosition(x, upperBorder);
-    //        Console.Write(borderChar);
-    //    }
-
-    //    for (int x = leftBorder; x < rightBorder; x++)
-    //    {
-    //        Console.SetCursorPosition(x, lowerBorder);
-    //        Console.Write(borderChar);
-    //    }
-
-    //    for (int y = upperBorder; y < lowerBorder; y++)
-    //    {
-    //        Console.SetCursorPosition(leftBorder, y);
-    //        Console.Write(borderChar);
-    //    }
-
-    //    for (int y = upperBorder; y < lowerBorder; y++)
-    //    {
-    //        Console.SetCursorPosition(rightBorder, y);
-    //        Console.Write(borderChar);
-    //    }
-
-    //}
-
+   
      
     
 
@@ -84,19 +43,15 @@ internal class Program
                 int fieldHeight;
 
                 Console.CursorVisible = false;                
-                Console.WindowWidth = 60;                   
-                Console.WindowHeight = 30;                  
+                //Console.WindowWidth = 60;                   
+                //Console.WindowHeight = 30;                  
                 fieldWidth = Console.WindowWidth;          
                 fieldHeight = Console.WindowHeight;
-
-
-                
-
 
                 int width = 77;
                 int height = 100;
                 int offset = 3;
-                char borderChar = '*';
+                char borderChar = '#';
     
 
         int upperBorder = offset;           // верхняя граница поля
@@ -186,16 +141,16 @@ internal class Program
 
                 }
 
-                void DraveSnake()
-                {
+                //void DraveSnake()
+                //{
 
 
-                    Console.Clear();
-                    SetCursorPosition(_playerX, _playerY);
-                    Console.Beep(2000, 150);
-                    Console.WriteLine("@");
-                    Thread.Sleep(50);
-                }
+                //    Console.Clear();
+                //    SetCursorPosition(_playerX, _playerY);
+                //    Console.Beep(2000, 150);
+                //    Console.WriteLine("@");
+                //    Thread.Sleep(50);
+                //}
 
                 Console.Clear();
                 SetCursorPosition(_playerX, _playerY);
