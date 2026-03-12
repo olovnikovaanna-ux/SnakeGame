@@ -66,11 +66,11 @@ internal class Program
 
         }
 
-        SetCursorPosition(101, 4);
+        SetCursorPosition(100, 4);
         for (int i = 0; i < 21; i++)
         {
             Console.WriteLine("#");
-
+            SetCursorPosition(100, 4);
         }
 
         ConsoleKey key2 = Console.ReadKey(true).Key; // TO DO:
