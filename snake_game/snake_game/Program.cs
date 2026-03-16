@@ -41,20 +41,20 @@ public class Program
     //private static int _fps = 100;          // пауза между циклами (миллисекунды)  
     //private static bool _isExit = false;    // флаг продолжения игры
     //private static bool _isPause = false;   // флаг паузы
-    private static Snake _snake;            // объект змейки
-    private static Frame _frame;            // объект игрового поля
-    private static Food _food;              // объект игрового поля
+    private GameState _gameState;
     #endregion
 
     static void Main()
     {
+        _gameState = new GameState();
+
         // 0. инициализация начального состояния игры
 
         while (!_isExit) // игровой цикл (пока идет игра)
         {
-            // 1.стереть старый кадр
-            // 2.нарисовать новый кадр
-            // 3.обновить состояние игры
+            // 1.обновить состояние игры
+            // 2.стереть старый кадр
+            // 3.нарисовать новый кадр            
             // 4. пауза между кадрами
         }
 
@@ -63,9 +63,9 @@ public class Program
 
         while (!_isExit)                             // игровой цикл (пока идет игра)
         {
-            ClearScreen();                          // 1.стереть старый кадр
-            DrawFrame(_frame, _snake, _food);       // 2.нарисовать новый кадр
             UpdateGameState(_frame, _snake, _food); // 3.обновить состояние игры
+            ClearScreen();                          // 1.стереть старый кадр
+            DrawFrame(_frame, _snake, _food);       // 2.нарисовать новый кадр            
             Sleep(_fps);                            // 4. пауза между кадрами
         }
         #endregion
@@ -73,12 +73,14 @@ public class Program
 
     private static void UpdateGameState(Frame frame, Snake snake, Food food)
     {
-        throw new NotImplementedException();
+        
+
+
     }
 
     private static void DrawFrame(Frame frame, Snake snake, Food food)
     {
-
+        
     }
 
     private static void ClearScreen()
