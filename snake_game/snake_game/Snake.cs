@@ -39,7 +39,7 @@ public class Snake
         // Создаем сегменты (строим змейку от хвоста к голове)
         for(int i = snakeLength - 1; i >= 0; i--)
         {
-            switch(Direction)
+            switch(direction)
             {
                 case Direction.Right:
                     // При движении вправо: хвост слева, голова справа

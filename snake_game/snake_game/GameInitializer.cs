@@ -153,7 +153,7 @@ public class GameInitializer
             Point candidateFood = new Point(x, y);  // создаем координату  
 
             if(!snake.Body.Contains(candidateFood)) // проверяем пересечение со змейкой
-                return candidate;                   // если пересечений нет, то возвращаем координату еды
+                return candidateFood;                   // если пересечений нет, то возвращаем координату еды
         }                                           // если есть, то повторяем цикл создания
 
         return null;
