@@ -13,21 +13,21 @@ namespace snakee
         public Frame Frame;
         public bool Pause = false;
         public bool Exit = false;
-        public int Fps;
+        public int fps = 100;
 
-        public GameState(bool exit)
-        {
-            if (Exit = true);
-            {
-                Console.WriteLine("game over");
-                Console.ReadKey();                
-                Console.Clear();
-            }
-        }
+        //public GameState(bool exit)
+        //{
+        //    if (Exit = true);
+        //    {
+        //        Console.WriteLine("game over");
+        //        Console.ReadKey();                
+        //        Console.Clear();
+        //    }
+        //}
 
-        public GameStat(bool pause)
+        public GameState(bool pause)
         {
-            if (Pause = true) ;
+            if (Pause = true);
             {
                  (Pause) = (!Pause);
                 Console.WriteLine("вы поставили игру на паузу");                               
