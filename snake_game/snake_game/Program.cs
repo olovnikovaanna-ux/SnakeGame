@@ -1,232 +1,145 @@
-﻿//using System.Drawing;
-//using System.Transactions;
-//using static System.Net.Mime.MediaTypeNames;
-
-
-//internal class Program2
-//{
-
-   
-
-   
-     
-    
-
-//    private static void Main(string[] args)
-//    {
-//        int _playerX = 5;
-//        int _playerY = 10;
-//        bool flag = true;
-
-//        //char BORDER_CHAR = '#';
-//        //int OFFSET = 5;
-//        //int fps = 100;
-//        //int fieldWidth;
-//        //int fieldHeight;
-
-//        //Console.CursorVisible = false;
-//        ////Console.WindowWidth = 60;                   
-//        ////Console.WindowHeight = 30;                  
-//        //fieldWidth = Console.WindowWidth;
-//        //fieldHeight = Console.WindowHeight;
-
-//        //int width = 77;
-//        //int height = 100;
-//        //int offset = 3;
-//        //char borderChar = '#';
-
-
-//        //int upperBorder = offset;           // верхняя граница поля
-//        //int lowerBorder = offset + height;  // нижняя граница поля
-//        //int leftBorder = offset;            // левая граница поля
-//        //int rightBorder = offset + width;   // правая граница поля
-
-
-//        SetCursorPosition(playerX: 43, playerY: 3);
-//        WriteColor("ЧТОБЫ НАЧАТЬ ИГРУ, НАЖМИТЕ", ConsoleColor.Green);  
-//        WriteColor(" ENTER\n");
-
-
-//        for (int i = 0; i < 101; i++)
-//        {
-//            Console.Write("#");
-
-//        }
-//        SetCursorPosition(0, 25);
-//        for (int i = 0; i < 101; i++)
-//        {
-//            Console.Write("#");
-
-//        }
-
-//        SetCursorPosition(0, 4);
-//        for (int i = 0; i < 21; i++)
-//        {
-//            Console.WriteLine("#");
-
-//        }
-
-//        SetCursorPosition(101, 4);
-//        for (int i = 101; i < 102; i++)
-//        {
-//            Console.WriteLine("#");
-            
-//        }
-
-//        ConsoleKey key2 = Console.ReadKey(true).Key; // TO DO:
-
-//        if (key2 == ConsoleKey.Enter)
-//        {
-//            Console.Beep(400, 300);
-
-
-
-//            while (flag)
-//            {
-
-
-//                //Console.Clear();
-
-//                //for (int x = leftBorder; x < rightBorder; x++)
-//                //{
-//                //    Console.SetCursorPosition(x, upperBorder);
-//                //    Console.Write(borderChar);
-//                //}
-
-//                //for (int x = leftBorder; x < rightBorder; x++)
-//                //{
-//                //    Console.SetCursorPosition(x, lowerBorder);
-//                //    Console.Write(borderChar);
-//                //}
-
-//                //for (int y = upperBorder; y < lowerBorder; y++)
-//                //{
-//                //    Console.SetCursorPosition(leftBorder, y);
-//                //    Console.Write(borderChar);
-//                //}
-
-//                //for (int y = upperBorder; y < lowerBorder; y++)
-//                //{
-//                //    Console.SetCursorPosition(rightBorder, y);
-//                //    Console.Write(borderChar);
-//                //}
-
-
-
-//                if (_playerX == 100)
-//                {
-//                    _playerX = 0;
-//                }
-
-//                if (_playerY == 24)
-//                {
-//                    _playerY = 4;
-//                }
-
-//                if (Console.KeyAvailable)  //если что то нажато
-//                {
-//                    ConsoleKey key = Console.ReadKey(true).Key;
-//                    if (key == ConsoleKey.Escape)
-//                    {
-//                        flag = false;
-//                        Console.Beep(500, 200); // 500-частота гц, 200-длительность
-//                        Console.Clear();
-
-//                         SetCursorPosition(playerX: 50, playerY: 3);
-//                        WriteColor("==== GAME OVER ====", ConsoleColor.Red);                        
-//                        continue;
-//                    }
-
-
-//                    if (key == ConsoleKey.W || key == ConsoleKey.UpArrow)
-//                        _playerY--;
-//                    if (key == ConsoleKey.S || key == ConsoleKey.DownArrow)
-//                        _playerY++;
-//                    if (key == ConsoleKey.A || key == ConsoleKey.LeftArrow)
-//                        _playerX--;
-//                    if (key == ConsoleKey.D || key == ConsoleKey.RightArrow)
-//                        _playerX++;
-
-
-
-//                    if (key == ConsoleKey.Spacebar)
-//                    {
-//                        SetCursorPosition(playerX: 58, playerY: 3);
-
-//                        WriteColor("ПАУЗА", ConsoleColor.Yellow);
-//                    }
-
-
-
-//                    if (key == ConsoleKey.P)
-
-//                    {
-
-//                        SetCursorPosition(playerX: 25, playerY: 3);
-//                        Console.ForegroundColor = ConsoleColor.Green;
-//                        Console.WriteLine("вы поставили игру на паузу. для продолжения повторно нажмите P");
-//                        Console.ResetColor();
-//                        Console.ReadKey();
-//                        while (key != ConsoleKey.P)
-//                        {
-//                            key = Console.ReadKey(true).Key;
-//                        }
-//                    }
-
-
-
-//                }
-
-//                //void DraveSnake()
-//                //{
-
-
-//                //    Console.Clear();
-//                //    SetCursorPosition(_playerX, _playerY);
-//                //    Console.Beep(2000, 150);
-//                //    Console.WriteLine("@");
-//                //    Thread.Sleep(50);
-//                //}
-
-
-//                Console.Clear();
-//                SetCursorPosition(_playerX, _playerY);
-//                Console.Beep(2000, 150);
-//                Console.WriteLine("@");
-//                Thread.Sleep(50);
-
-//            }
-
-//        }
-
-
-
-//    }
-
-
-//    // void DraveSnake()
-//    //{
-//    //    int _playerX = 5;
-//    //    int _playerY = 10;
-
-//    //    Console.Clear();
-//    //    SetCursorPosition(_playerX, _playerY);
-//    //    Console.Beep(2000, 150);
-//    //    Console.WriteLine("@");
-//    //    Thread.Sleep(50);
-//    //}
-
-
-//    private static void WriteColor(string text, ConsoleColor color = ConsoleColor.White)
-//    {
-//        Console.ForegroundColor = color;
-//        Console.Write(text);
-//        Console.ResetColor();
-//    }
-
-
-//    private static void SetCursorPosition(int playerX = 5, int playerY = 10)
-//    {
-//        Console.SetCursorPosition(playerX, playerY);
-//    }
-//}
+﻿using System.Drawing;
+using System.Transactions;
+using static System.Net.Mime.MediaTypeNames;
+
+
+
+public class Program
+{
+    #region НАСТРОЙКИ КОНСОЛЬНОЙ ИГРЫ
+    private const char SNAKE_HEAD_CHAR = '@';   // символ головы змейки
+    private const char SNAKE_BODY_CHAR = 'O';   // символ тела змейки
+    private const char BORDER_CHAR = '#';       // символ границы игрового поля        
+    #endregion
+
+    #region СОСТОЯНИЕ ИГРЫ
+    #region ОСНОВНЫЕ НАСТРОЙКИ
+    private static int _fieldWidth = 60;    // ширина игрового поля
+    private static int _fieldHeight = 30;   // высота игрового поля
+    private static int _fps = 100;          // пауза между циклами (миллисекунды)  
+    private static bool _isExit = false;    // флаг продолжения игры
+    private static bool _isPause = false;   // флаг паузы       
+    #endregion
+    #region НАСТРОЙКИ ЗМЕЙКИ
+    public static List<Point> Body { get; set; }            // тело змейки: индекс 0 - хвост, последний индекс - голова
+    public static Direction CurrentDirection { get; set; } // текущее направление движения
+    public static bool IsAlive { get; set; }                // флаг - жива ли змейка       
+    #endregion
+    #region НАСТРОЙКИ ИГРОВОГО ПОЛЯ
+    public int Width { get; set; }  // Ширина игрового поля (внутренняя область)
+    public int Height { get; set; } // Высота игрового поля (внутренняя область)
+    #endregion
+    #region НАСТРОЙКИ ЕДЫ
+    public Point Position { get; set; } // позиция еды на игровом поле
+    public bool IsActive { get; set; } // флаг - существует ли еда на поле
+    #endregion
+    #endregion
+
+    #region СОСТОЯНИЕ ИГРЫ
+    //private static int _fieldWidth = 60;    // ширина игрового поля
+    //private static int _fieldHeight = 30;   // высота игрового поля
+    //private static int _fps = 100;          // пауза между циклами (миллисекунды)  
+    //private static bool _isExit = false;    // флаг продолжения игры
+    //private static bool _isPause = false;   // флаг паузы
+    private GameState _gameState;
+    #endregion
+
+    static void Main()
+    {
+        _gameState = new GameState();
+
+        // 0. инициализация начального состояния игры
+
+        while (!_isExit) // игровой цикл (пока идет игра)
+        {
+            // 1.обновить состояние игры
+            // 2.стереть старый кадр
+            // 3.нарисовать новый кадр            
+            // 4. пауза между кадрами
+        }
+
+        #region Пирвичная инициализация змейки и игровой цикл
+        InitializeGame();                          // 0. инициализация начального состояния игры
+
+        while (!_isExit)                             // игровой цикл (пока идет игра)
+        {
+            UpdateGameState(_frame, _snake, _food); // 3.обновить состояние игры
+            ClearScreen();                          // 1.стереть старый кадр
+            DrawFrame(_frame, _snake, _food);       // 2.нарисовать новый кадр            
+            Sleep(_fps);                            // 4. пауза между кадрами
+        }
+        #endregion
+    }
+
+    private static void UpdateGameState(Frame frame, Snake snake, Food food)
+    {
+        
+
+
+    }
+
+    private static void DrawFrame(Frame frame, Snake snake, Food food)
+    {
+        
+    }
+
+    private static void ClearScreen()
+    {
+        Console.Clear();
+    }
+
+    private static void Sleep(int fps)
+    {
+        Thread.Sleep(50);
+    }
+
+    #region 0. Инициализация начального состояния игры   
+    private static void InitializeGame()
+    {
+        // Инициализация рамки игрового поля
+
+        // Инициализация змейки
+        // Создаем начальное тело змейки (3 сегмента, голова справа)
+
+        // Инициализация еды
+
+        // Сброс флагов игры
+
+        /*
+        // Инициализация рамки игрового поля
+        _frame = new Frame(
+            width: _fieldWidth,
+            height: _fieldHeight
+        );
+
+        // Инициализация змейки
+        // Создаем начальное тело змейки (3 сегмента, голова справа)
+        int startX = _fieldWidth / 2;      // центр поля по горизонтали
+        int startY = _fieldHeight / 2;     // центр поля по вертикали
+
+        List<Point> snakeBody = new List<Point>
+        {
+            new Point(startX - 2, startY), // хвост
+            new Point(startX - 1, startY), // тело
+            new Point(startX, startY)      // голова
+        };
+
+        _snake = new Snake(
+            body: snakeBody,
+            currentDirection: Direction.Right,
+            isAlive: true
+        );
+
+        // Инициализация еды
+        _food = new Food(
+            position: GenerateRandomFoodPosition(_frame, _snake),
+            isActive: true
+        );
+
+        // Сброс флагов игры
+        _isExit = false;
+        _isPause = false; 
+        */
+    }
+    #endregion
+}

@@ -1,5 +1,8 @@
 // Класс для хранения состояния игры
-using System.Diagnostics.CodeAnalysis;
+//using System.Diagnostics.CodeAnalysis;
+
+
+
 
 public class GameState
 {
